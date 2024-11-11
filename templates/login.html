@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Login - Chatbot</title>
+</head>
+<body>
+    <div class="header">
+        <button onclick="navigateOnce('login.html')">Login</button>
+        <button onclick="navigateOnce('signup.html')">Signup</button>
+        <h1 onclick="window.location.href='index.html'">Chatbot</h1>
+    </div>
+
+    <div id="main-content">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert("Login submitted!"); // Placeholder for login processing logic
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Chatbot</title>
+</head>
+<body>
+
+    <div class="header">
+        <button id="login-btn" onclick="navigateOnce('/login')">Login</button>
+        <button id="signup-btn" onclick="navigateOnce('/signup')">Signup</button>
+        <h1 onclick="window.location.href='/'" onmouseover="this.style.color='blue'; this.style.cursor='pointer';" onmouseout="this.style.color='white';">Chatbot</h1>
+    </div>
+    
+    <div class="chat-container" id="main-content">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type a message..." onkeypress="checkEnter(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
