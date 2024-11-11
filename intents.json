@@ -1,0 +1,310 @@
+{
+  "intents": [
+      {
+          "tag": "goodbye",
+          "patterns": [
+              "Goodbye",
+              "See you later",
+              "Bye bye",
+              "Talk to you soon",
+              "Farewell",
+              "I'm leaving",
+              "Catch you later",
+              "Take care"
+          ],
+          "responses": [
+              "See you!",
+              "Have a nice day!",
+              "Goodbye!",
+              "Until next time!",
+              "Bye! Come back again soon."
+          ]
+      },
+      {
+          "tag": "thanks",
+          "patterns": [
+              "Thanks",
+              "Thank you",
+              "That's helpful",
+              "Awesome, thanks",
+              "Thanks for helping me",
+              "I appreciate it",
+              "Much appreciated",
+              "You're the best"
+          ],
+          "responses": [
+              "My pleasure",
+              "You're welcome",
+              "No problem!",
+              "Anytime!",
+              "Glad I could help!"
+          ]
+      },
+      {
+          "tag": "greeting",
+          "patterns": [
+              "Hi there",
+              "Is anyone there?",
+              "Hey",
+              "Hola",
+              "Hello",
+              "Good day",
+              "What's up?",
+              "How's it going?",
+              "Howdy",
+              "What's new?",
+              "Good morning",
+              "Good afternoon",
+              "Good evening"
+          ],
+          "responses": [
+              "Hello!",
+              "Good to see you again!",
+              "Hi there, how can I help?",
+              "Greetings!",
+              "Hi! What can I do for you today?"
+          ]
+      },
+      {
+          "tag": "question",
+          "patterns": [
+              "How are you?",
+              "How's it going?",
+              "What's up?",
+              "How's everything?",
+              "How are you doing?",
+              "Are you doing well?",
+              "What are you up to?"
+          ],
+          "responses": [
+              "I'm fine, how are you?",
+              "Doing well! How about you?",
+              "All good here, thank you!",
+              "I'm just a bot, but thanks for asking!",
+              "Feeling great! How can I assist you today?"
+          ]
+      },
+      {
+          "tag": "weather",
+          "patterns": [
+              "What's the weather like?",
+              "How's the weather today?",
+              "Tell me the weather",
+              "Is it going to rain?",
+              "What temperature is it?",
+              "Weather update",
+              "Will it be sunny tomorrow?"
+          ],
+          "responses": [
+              "I can't check the weather, but it's always sunny in my world!",
+              "I'm not sure, but you can check a weather website for the latest updates.",
+              "Weather? I'm more about chatting than forecasting!"
+          ]
+      },
+      {
+          "tag": "jokes",
+          "patterns": [
+              "Tell me a joke",
+              "Make me laugh",
+              "I need a good joke",
+              "Do you know any jokes?",
+              "Humor me",
+              "Crack a joke"
+          ],
+          "responses": [
+              "Why did the scarecrow win an award? Because he was outstanding in his field!",
+              "I told my computer I needed a break, and now it won't stop sending me to the beach!",
+              "Why don’t skeletons fight each other? They don’t have the guts!",
+              "What do you call fake spaghetti? An impasta!"
+          ]
+      },
+      {
+          "tag": "help",
+          "patterns": [
+              "Can you help me?",
+              "I need assistance",
+              "Help me",
+              "I need some help",
+              "Support",
+              "Can you assist me?"
+          ],
+          "responses": [
+              "Of course! What do you need help with?",
+              "I'm here to assist you. What do you need?",
+              "Sure! Please tell me how I can help you.",
+              "I'm happy to help! Just let me know what you need."
+          ]
+      },
+      {
+          "tag": "affirmation",
+          "patterns": [
+              "Yes",
+              "Absolutely",
+              "Sure",
+              "Of course",
+              "Definitely",
+              "You got it",
+              "I agree"
+          ],
+          "responses": [
+              "Great! How can I assist you further?",
+              "Awesome! What’s next?",
+              "Glad to hear that!",
+              "Wonderful! What can I do for you?"
+          ]
+      },
+      {
+          "tag": "negation",
+          "patterns": [
+              "No",
+              "Not really",
+              "Nope",
+              "I don't think so",
+              "That's not right",
+              "I disagree"
+          ],
+          "responses": [
+              "Okay, let me know if you change your mind.",
+              "Got it! If you need anything else, just ask.",
+              "No worries! I'm here if you need me.",
+              "Alright! Just let me know if you need help."
+          ]
+      },
+      {
+          "tag": "motivation",
+          "patterns": [
+              "Give me a motivational quote",
+              "Inspire me",
+              "I need motivation",
+              "What's a good quote?",
+              "Tell me something inspirational"
+          ],
+          "responses": [
+              "Believe you can and you're halfway there.",
+              "The only way to do great work is to love what you do.",
+              "You are never too old to set another goal or to dream a new dream.",
+              "Keep your face always toward the sunshine—and shadows will fall behind you."
+          ]
+      },
+      {
+          "tag": "small_talk",
+          "patterns": [
+              "What do you like to do?",
+              "Tell me about yourself",
+              "What are your hobbies?",
+              "Do you have a favorite color?",
+              "What's your favorite food?",
+              "What do you do in your free time?"
+          ],
+          "responses": [
+              "I love chatting with people like you!",
+              "I don't eat, but I enjoy talking about food!",
+              "I enjoy learning new things and helping out!",
+              "I'm just a bot, but I love to help you!"
+          ]
+      },
+      {
+          "tag": "facts",
+          "patterns": [
+              "Tell me a fact",
+              "I want to know something interesting",
+              "Give me a random fact",
+              "Share a fun fact",
+              "Do you know any interesting facts?",
+              "What's an interesting fact?"
+          ],
+          "responses": [
+              "Did you know? Honey never spoils!",
+              "Octopuses have three hearts!",
+              "A group of flamingos is called a 'flamboyance'.",
+              "Bananas are berries, but strawberries are not!",
+              "The Eiffel Tower can be 15 cm taller during the summer!"
+          ]
+      },
+      {
+          "tag": "personal_info",
+          "patterns": [
+              "What is your name?",
+              "Are you a human?",
+              "Do you have a name?",
+              "Can you tell me about yourself?",
+              "What do you look like?",
+              "Tell me about your creators"
+          ],
+          "responses": [
+              "I'm just a chatbot created to help you!",
+              "I don't have a physical form, but I'm here to chat!",
+              "You can call me your friendly chatbot!",
+              "I'm not a human, but I can assist you with your questions!",
+              "I was created by a team of talented developers."
+          ]
+      },
+      {
+          "tag": "food",
+          "patterns": [
+              "What's your favorite food?",
+              "Do you like pizza?",
+              "What do you think about sushi?",
+              "What's the best dessert?",
+              "What kind of food do you like?"
+          ],
+          "responses": [
+              "I don't eat, but I hear pizza is popular!",
+              "Sushi is a favorite for many!",
+              "Desserts are always a treat, especially chocolate!",
+              "I think every food has its charm!"
+          ]
+      },
+      {
+          "tag": "feelings",
+          "patterns": [
+              "I'm feeling sad",
+              "I'm happy",
+              "I'm bored",
+              "I'm feeling great",
+              "I'm upset",
+              "I'm excited"
+          ],
+          "responses": [
+              "I'm here for you! Want to talk about it?",
+              "That's great to hear! What made you happy?",
+              "Boredom can be tough. Want to chat?",
+              "I'm glad you're feeling great! What’s going on?",
+              "It's okay to feel upset sometimes. I'm here to listen!",
+              "Excitement is a wonderful feeling! What’s making you excited?"
+          ]
+      },
+      {
+          "tag": "travel",
+          "patterns": [
+              "Where should I travel?",
+              "What's a good travel destination?",
+              "I need travel suggestions",
+              "Tell me about a place to visit",
+              "What are some travel tips?"
+          ],
+          "responses": [
+              "How about visiting the beach for some relaxation?",
+              "The mountains offer great hiking and scenery!",
+              "You can't go wrong with a trip to a big city!",
+              "Exploring a new country can be an adventure of a lifetime!"
+          ]
+      },
+      {
+          "tag": "hobbies",
+          "patterns": [
+              "What hobbies do you have?",
+              "Tell me about your hobbies",
+              "Do you have any interests?",
+              "What do you like to do for fun?",
+              "Any recommendations for hobbies?"
+          ],
+          "responses": [
+              "I enjoy chatting and learning from people!",
+              "Reading and writing are great hobbies!",
+              "Many people enjoy painting, gardening, or cooking.",
+              "How about trying something new like photography or hiking?"
+          ]
+      }
+  ]
+}
