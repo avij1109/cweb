@@ -57,8 +57,7 @@ def get_response(message):
             return random.choice(intent['responses'])
 
 @app.route('/')
-def hell():
-    return True
+
 def home():
     return render_template('index.html')
 
