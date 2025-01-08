@@ -8,10 +8,10 @@
     <title>Chatbot</title>
 </head>
 <body>
-
     <div class="header">
         <button id="login-btn" onclick="navigateOnce('/login')">Login</button>
         <button id="signup-btn" onclick="navigateOnce('/signup')">Signup</button>
+        <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
         <h1 onclick="window.location.href='/'" onmouseover="this.style.color='blue'; this.style.cursor='pointer';" onmouseout="this.style.color='white';">Chatbot</h1>
     </div>
     
@@ -22,7 +22,36 @@
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
-
+    
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        function logout() {
+            fetch('/logout')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = '/login';
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Check if user is logged in
+        fetch('/check_login')
+            .then(response => response.json())
+            .then(data => {
+                if (data.logged_in) {
+                    document.getElementById('login-btn').style.display = 'none';
+                    document.getElementById('signup-btn').style.display = 'none';
+                    document.getElementById('logout-btn').style.display = 'inline-block';
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    </script>
 </body>
 </html>
+

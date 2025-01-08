@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="header">
-        <button onclick="navigateOnce('login.html')">Login</button>
-        <button onclick="navigateOnce('signup.html')">Signup</button>
-        <h1 onclick="window.location.href='index.html'">Chatbot</h1>
+        <button onclick="navigateOnce('/login')">Login</button>
+        <button onclick="navigateOnce('/signup')">Signup</button>
+        <h1 onclick="window.location.href='/'">Chatbot</h1>
     </div>
-
+    
     <div id="main-content">
         <h2>Login</h2>
         <form id="login-form">
@@ -23,13 +23,41 @@
             <input type="password" id="password" name="password"><br><br>
             <button type="submit">Login</button>
         </form>
+        <p id="message"></p>
     </div>
     
     <script>
         document.getElementById('login-form').addEventListener('submit', function (event) {
             event.preventDefault();
-            alert("Login submitted!"); // Placeholder for login processing logic
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').textContent = data.message;
+                if (data.success) {
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 1500);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         });
+
+        function navigateOnce(url) {
+            document.querySelectorAll('button').forEach(btn => btn.disabled = true);
+            window.location.href = url;
+        }
     </script>
 </body>
 </html>
+

@@ -9,29 +9,58 @@
 </head>
 <body>
     <div class="header">
-        <button onclick="navigateOnce('login.html')">Login</button>
-        <button onclick="navigateOnce('signup.html')">Signup</button>
-        <h1 onclick="window.location.href='index.html'">Chatbot</h1>
+        <button onclick="navigateOnce('/login')">Login</button>
+        <button onclick="navigateOnce('/signup')">Signup</button>
+        <h1 onclick="window.location.href='/'">Chatbot</h1>
     </div>
-
+    
     <div id="main-content">
         <h2>Signup</h2>
         <form id="signup-form">
-            <label for="new-username">Username:</label><br>
-            <input type="text" id="new-username" name="new-username"><br><br>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email"><br><br>
-            <label for="new-password">Password:</label><br>
-            <input type="password" id="new-password" name="new-password"><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
             <button type="submit">Signup</button>
         </form>
+        <p id="message"></p>
     </div>
     
     <script>
         document.getElementById('signup-form').addEventListener('submit', function (event) {
             event.preventDefault();
-            alert("Signup submitted!"); // Placeholder for signup processing logic
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            fetch('/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, email, password }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').textContent = data.message;
+                if (data.success) {
+                    setTimeout(() => {
+                        window.location.href = '/login';
+                    }, 1500);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         });
+
+        function navigateOnce(url) {
+            document.querySelectorAll('button').forEach(btn => btn.disabled = true);
+            window.location.href = url;
+        }
     </script>
 </body>
 </html>
+

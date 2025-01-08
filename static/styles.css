@@ -1,4 +1,4 @@
-/* styles.css */
+/* General styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f4f8;
@@ -78,46 +78,66 @@ button:hover {
     background-color: #303f9f;
 }
 
-/* User and bot message styles */
+/* Chat bubble styles */
 .user-message {
     display: flex;
     justify-content: flex-end; /* Align user messages to the right */
+    margin-bottom: 10px;
+    position: relative;
 }
 
 .bot-message {
     display: flex;
     justify-content: flex-start; /* Align bot messages to the left */
+    margin-bottom: 10px;
+    position: relative;
 }
 
-/* Messages with backgrounds */
 .message {
-    padding: 10px;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    max-width: 75%;
-    word-wrap: break-word; /* Ensure long words break correctly */
+    padding: 12px 18px;
+    border-radius: 20px;
+    margin: 5px 0;
+    max-width: 75%; /* Limit the bubble's width */
+    width: fit-content; /* Adjust width to content */
+    word-wrap: break-word; /* Handle long words */
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .user-message .message {
-    background-color: #d1e7dd; /* Light green for user */
+    background-color: #d1e7dd; /* Light green for user messages */
+    color: #0f5132;
     text-align: right;
 }
 
 .bot-message .message {
-    background-color: #f8d7da; /* Light red for bot */
+    background-color: #f8d7da; /* Light red for bot messages */
+    color: #842029;
     text-align: left;
 }
-button{
-  color: black;
-  background-color: white;
-  
-  align-items: end;
-  justify-content: center;
-  margin-top: 0;
-  margin-right: 10px;
-}
-.header h1{
-    cursor: pointer;
-    transition: color 0.3s;
 
+/* Bubble tails */
+.user-message .message::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #d1e7dd;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 100% 100%, 0% 100%);
+}
+
+.bot-message .message::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #f8d7da;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
 }
