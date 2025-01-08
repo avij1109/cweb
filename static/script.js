@@ -37,7 +37,11 @@ function sendMessage() {
 // Function to add message to chat box with typing animation
 function addMessageToChatBox(message, sender) {
     const messageDiv = document.createElement('div');
-    messageDiv.classList.add(sender + '-message', 'message');
+    messageDiv.classList.add(sender + '-message');
+    const innerMessageDiv = document.createElement('div');
+    innerMessageDiv.classList.add('message');
+    innerMessageDiv.setAttribute('data-sender', sender === 'user' ? 'You' : 'Bot');
+    messageDiv.appendChild(innerMessageDiv);
     chatBox.appendChild(messageDiv);
     chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to bottom
 
@@ -47,7 +51,7 @@ function addMessageToChatBox(message, sender) {
     function typeMessage() {
         if (index < message.length) {
             const char = message.charAt(index);
-            messageDiv.innerHTML += char === ' ' ? '&nbsp;' : char;
+            innerMessageDiv.innerHTML += char === ' ' ? '&nbsp;' : char;
             index++;
             setTimeout(typeMessage, typingSpeed);
         }
@@ -56,7 +60,7 @@ function addMessageToChatBox(message, sender) {
     if (sender === 'bot') {
         setTimeout(typeMessage, 500);
     } else {
-        messageDiv.innerText = message;
+        innerMessageDiv.innerText = message;
     }
 }
 
@@ -71,3 +75,4 @@ function navigateOnce(url) {
 window.onload = function() {
     addMessageToChatBox("Welcome to Chatterbot!", 'bot');
 };
+
